@@ -1,0 +1,4 @@
+hello world! I'm a scheduled tweet!
+hello from elixirlang!
+        mixes and genservers and pipes and functions and what have you...
+    Hey Hey! So I'm a string over 140 characters and there's no way that I'll get scheduled because I'm just way too long for twitter and such and I should probably focus on being less verbose in the future.

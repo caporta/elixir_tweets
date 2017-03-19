@@ -17,6 +17,13 @@ defmodule ElixirTweet.Application do
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
     # for other strategies and supported options
     opts = [strategy: :one_for_one, name: ElixirTweet.Supervisor]
-    Supervisor.start_link(children, opts)
+
+    process = Supervisor.start_link(children, opts)
+    ElixirTweet.Scheduler.schedule_file(
+      "* * * * *",
+      Path.join("#{:code.priv_dir(:elixir_tweet)}", "sample_tweets.txt")
+    )
+
+    process
   end
 end
