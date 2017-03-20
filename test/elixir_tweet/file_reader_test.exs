@@ -7,4 +7,11 @@ defmodule FileReaderTest do
 
     assert str != nil
   end
+
+  test "It never returns a string longer than 140 characters" do
+    file = Path.join("#{:code.priv_dir(:elixir_tweet)}", "too_long.txt")
+    str = ElixirTweet.FileReader.get_strings_to_tweet(file)
+
+    assert str == "This tweet is below 140 characters."
+  end
 end
